@@ -4,14 +4,15 @@ set(CMAKE_MACOSX_RPATH 1)
 project(bione)
 
 set(CMAKE_CXX_STANDARD 17)
-
+set(DEPENDENCY_DIR dependency)
 find_package(openssl REQUIRED)
-
-
 add_subdirectory(dependency/cpr)
 
 
-MESSAGE( STATUS "     " ${CPR_INCLUDE_DIRS} )
+
+include_directories( ${DEPENDENCY_DIR}/Catch2/single_include)
+
+
 
 include_directories(${CPR_INCLUDE_DIRS})
 
